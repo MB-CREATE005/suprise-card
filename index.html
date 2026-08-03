@@ -1,16 +1,114 @@
-<h1>🎉 NI WAKATI WA VIJANA! 🎉</h1>
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise Message</title>
+
+<style>
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+font-family:Arial,sans-serif;
+overflow:hidden;
+}
+
+.envelope{
+position:relative;
+width:300px;
+height:200px;
+cursor:pointer;
+}
+
+.back{
+position:absolute;
+width:100%;
+height:100%;
+background:#ffffff;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.flap{
+position:absolute;
+width:100%;
+height:100px;
+background:#FFD700;
+clip-path:polygon(0 0,100% 0,50% 100%);
+transform-origin:top;
+transition:1s;
+z-index:3;
+}
+
+.letter{
+position:absolute;
+left:15px;
+right:15px;
+bottom:15px;
+background:white;
+border-radius:10px;
+padding:20px;
+text-align:center;
+transform:translateY(130px);
+transition:1s;
+z-index:2;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+transform:translateY(-80px);
+}
+
+h2{
+color:#d62828;
+}
+
+p{
+color:#222;
+line-height:1.6;
+}
+
+.tap{
+position:absolute;
+top:-40px;
+width:100%;
+text-align:center;
+color:white;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" onclick="this.classList.toggle('open')">
+<div class="tap">📩 Gusa bahasha kufungua</div>
+<div class="back"></div>
+<div class="flap"></div>
+
+<div class="letter">
+<h2>🎉 NI WAKATI WA VIJANA! 🎉</h2>
 
 <p>
-Leo si siku ya kawaida...<br><br>
-
-Ni siku ya kuamini ndoto.<br>
-Ni siku ya kuamini mabadiliko.<br>
-Ni siku ya kuamini viongozi wanaoweka wananchi mbele.<br><br>
-
 <b>DR. MBARAK</b><br>
-<b>FOR GOVERNOR – LAMU COUNTY 2027</b><br><br>
+FOR GOVERNOR<br>
+LAMU COUNTY 2027<br><br>
 
 Tushikamane kujenga Lamu yenye umoja, maendeleo na fursa kwa vijana.<br><br>
 
 <b>MB CREATE PREMIUM DESIGNS</b>
 </p>
+
+</div>
+
+</div>
+
+</body>
+</html>
