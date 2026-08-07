@@ -1,13 +1,106 @@
-.envelope.open .flap{
-    transform:rotateX(180deg);
-    z-index:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.envelope.open .letter{
-    transform:translateY(-130px);
-    z-index:4;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #061526, #092d49);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-.envelope.open{
-    margin-top:130px;
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope {
+    position: relative;
+    width: 320px;
+    height: 210px;
+    background: #651f08;
+    cursor: pointer;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 115px solid #9b5200;
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 5;
+}
+
+.letter {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 300px;
+    min-height: 190px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    padding: 22px 18px;
+    text-align: center;
+    transition: transform 0.8s ease;
+    z-index: 2;
+}
+
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .letter {
+    transform: translateY(-150px);
+    z-index: 6;
+}
+
+.hint {
+    position: absolute;
+    width: 100%;
+    top: -55px;
+    left: 0;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.title {
+    color: #ffd34d;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.message {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.message strong {
+    color: #ffd34d;
+}
+
+.message small {
+    display: block;
+    margin-top: 12px;
+    color: #ddd;
+    font-weight: bold;
 }
